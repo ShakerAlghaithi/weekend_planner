@@ -1,0 +1,11 @@
+<h2>Edit Your Plan:</h2>
+<div id="edit-plan" >
+  <%= form_for @plan do |f| %>
+    <%= f.text_area :text, placeholder: "Enter your plan here ..." %><br>
+    <br>
+    <%= f.submit class: "btn btn-primary btn-sm" %>
+  <% end %>
+
+<!-- NEED TO ADD VIEWS THAT ARE EMBEDDED -->
+  <%= link_to "Cancel", plans_path %>
+</div>

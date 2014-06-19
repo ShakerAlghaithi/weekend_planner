@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+</head>
+<body>
+
+<div class="row">
+  <div id="planshow" class="col-sm-6">
+   <!-- <a id="displayText", href="javascript:toggle();">Add a Plan</a> -->
+   <form id="new-plan">
+     <input type="text" id="planfield" placeholder="write your plan here ..">
+     <input type="submit">
+   </form>
+    <div id="planList">
+
+      <% @plans.each do |plan| %>
+      <ul>
+      <%= plan.text %>
+      </ul>
+      <% end %>
+
+    </div>
+
+  </div>
+  <div class="col-sm-6 ">.col-xs-6</div>
+</div>
+</body>
+</html>
