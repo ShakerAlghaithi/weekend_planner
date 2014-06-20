@@ -1,33 +1,27 @@
 <div id ="planList" class="row">
-<div class="page-header">
-  <%= link_to new_plan_path, :class => 'btn btn-default btn-md' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Plan
-  <% end %>
-  <h1>Listing plans</h1>
+  <div class="page-header">
+    <%= link_to new_plan_path, :class => 'btn btn-default btn-md' do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      New Plan
+    <% end %>
+    <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+  <h4>Listing plans</h4>
+  <div class="addthis_native_toolbox"></div>
 </div>
-
 <div id="plansTable" class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-            <th>Contant</th>
-            <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
     <tbody>
       <%= content_tag_for(:tr, @plans) do |plan| %>
             <td><%= plan.contant %></td>
             <td><%= link_to 'Show', plan %></td>
         <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
         <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a class="addthis_button_facebook_like" fb:like:send="true"></a></td>
       <% end %>
     </tbody>
   </table>
 </div>
+<%= will_paginate @plans %>
 </div>
 <div class="row">
 <h1> search for the events </h1>
