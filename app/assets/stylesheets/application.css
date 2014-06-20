@@ -13,9 +13,16 @@
  *= require_tree .
  *= require_self
  */
- .body {
+ body {
+
   background-size: cover;
-  background-image: url('http://i.imgur.com/NbMtv.jpg');
+  background-image: url('http://www.zingerbug.com/Backgrounds/background_images/aqua_random_spiral_swirls_background_1800x1600.jpg');
+ }
+ #navbar {
+
+  font-size: 15px;
+  font-family: 'Lobster';
+  background-color: #A9E9E1;
  }
  #displayText {
   display: block;

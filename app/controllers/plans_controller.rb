@@ -6,8 +6,7 @@ class PlansController < ApplicationController
 
   def index
     @plans = Plan.all
-    # binding.pry
-    if params[:location] != nil && params[:keyword]
+    if params[:location] != nil
     location = params[:location] #get the search input from the user
     keyword = params[:keyword]
     eventful = Eventful::API.new ENV['EVENTFUL_KEY'] #send the request to the API
@@ -15,31 +14,13 @@ class PlansController < ApplicationController
                            :keywords => keyword,
                            :location => location,
                            :page_size => 5
-    # binding.pry
-    # make @events = eventbrite api stuff
-     # @events = @results
+
     end
 
   end
 
   def show
   end
-
-  def search
-    location = params[:location] #get the search input from the user
-    keyword = params[:keyword]
-    eventful = Eventful::API.new ENV['EVENTFUL_KEY'] #send the request to the API
-    @results = eventful.call 'events/search',        #store the response
-                           :keywords => keyword,
-                           :location => location,
-                           :page_size => 5
-    # make @events = eventbrite api stuff
-     @events = @results
-     # render json: @events
-
-     redirect_to plans_path(@events)
-  end
-
 
   def new
     @plan = Plan.new
