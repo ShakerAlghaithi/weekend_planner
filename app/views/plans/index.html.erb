@@ -29,6 +29,20 @@
   </table>
 </div>
 </div>
-<div class="row">
-<h1> search for the events </h1>
+<hr size="10" noshade>
+<div id="event" class="row">
+<h4> Search for the events </h4>
+<form id="eventSearch" action="plans/search" class="search-wrapper cf">
+    <input id="location" name="location" type="text" placeholder="Enter the location here .." required="">
+    <input id="keyword" name="keyword" type="text" placeholder="something you search for..." required="">
+    <button  id="search" type="submit">Search</button>
+</form>
+  <table class="search_results" ></table>
+  <div class="span10">
+      <h2>Show</h2>
+      <ul id="localshows"></ul>
+      <%= @results.inspect %>
+  </div>
 </div>
+
+
