@@ -13,11 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ .body {
+  background-size: cover;
+  background-image: url('http://i.imgur.com/NbMtv.jpg');
+ }
  #displayText {
   display: block;
   margin-left: 7px;
  }
  #planList{
 
-  background-color: #C3ECFB;
+  background-color: #78AEB7;
+ }
+ #event {
+  background-color: #78AEB7;
  }
