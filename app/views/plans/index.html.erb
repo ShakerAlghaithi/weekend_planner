@@ -1,7 +1,7 @@
 <div id ="planList" class="row">
   <div class="page-header">
     <%= link_to new_plan_path, :class => 'btn btn-default btn-md' do %>
-      <span class="glyphicon glyphicon-plus"></span>
+    <span class="glyphicon glyphicon-plus"></span>
       New Plan
     <% end %>
     <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
@@ -12,17 +12,19 @@
   <table class="table table-striped table-bordered table-hover">
     <tbody>
       <%= content_tag_for(:tr, @plans) do |plan| %>
-            <td><%= plan.contant %></td>
-            <td><%= link_to 'Show', plan %></td>
+        <td><div class="fb-send" data-href="https://developers.facebook.com/docs/plugins/" data-colorscheme="light"></div></td>
+        <td><%= plan.contant %></td>
+        <td><%= link_to 'Show', plan %></td>
         <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
         <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><a class="addthis_button_facebook_like" fb:like:send="true"></a></td>
+
       <% end %>
     </tbody>
   </table>
 </div>
 <%= will_paginate @plans %>
 </div>
+
 <div class="row">
 <h1> search for the events </h1>
 </div>
