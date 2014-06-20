@@ -1,8 +1,7 @@
 class CreatePlans < ActiveRecord::Migration
   def change
     create_table :plans do |t|
-      t.text :text
-      t.references :user, index: true
+      t.text :contant
 
       t.timestamps
     end

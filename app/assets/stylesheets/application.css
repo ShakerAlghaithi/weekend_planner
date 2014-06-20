@@ -13,11 +13,25 @@
  *= require_tree .
  *= require_self
  */
+ body {
+
+  background-size: cover;
+  background-image: url('http://www.zingerbug.com/Backgrounds/background_images/aqua_random_spiral_swirls_background_1800x1600.jpg');
+ }
+ #navbar {
+
+  font-size: 15px;
+  font-family: 'Lobster';
+  background-color: #A9E9E1;
+ }
  #displayText {
   display: block;
   margin-left: 7px;
  }
- #planshow{
-  padding-top: 5px;
-  background-color: #C3ECFB;
+ #planList{
+
+  background-color: #78AEB7;
+ }
+ #event {
+  background-color: #78AEB7;
  }

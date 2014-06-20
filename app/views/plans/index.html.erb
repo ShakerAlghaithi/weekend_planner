@@ -1,31 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-</head>
-<body>
-
-<div class="row">
-  <div id="planshow" class="col-sm-6">
-   <!-- <a id="displayText", href="javascript:toggle();">Add a Plan</a> -->
-   <form id="new-plan">
-     <input type="text" id="planfield" placeholder="write your plan here ..">
-     <input type="submit">
-   </form>
-    <div id="planList">
-
-      <% @plans.each do |plan| %>
-      <ul>
-      <%= plan.text %>
-      </ul>
-      <% end %>
-
-    </div>
-
-  </div>
-  <div class="col-sm-6 ">.col-xs-6</div>
+<div id ="planList" class="row">
+<div class="page-header">
+  <%= link_to new_plan_path, :class => 'btn btn-default btn-md' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Plan
+  <% end %>
+  <h4>Listing plans</h4>
 </div>
-</body>
-</html>
+
+<div id="plansTable" class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <tbody>
+      <%= content_tag_for(:tr, @plans) do |plan| %>
+            <td><%= plan.contant %></td>
+            <td><%= link_to 'Show', plan %></td>
+        <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+        <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</div>
+<hr size="10" noshade>
+<div id="event" class="row">
+  <h4> Search for the events </h4>
+  <%= form_tag plans_path, :method => 'get' do %>
+    <%= text_field_tag :location, params[:location], placeholder: "Enter the location here .." %>
+    <%= text_field_tag :keyword, params[:keyword], placeholder: "Enter the something here .." %>
+    <%= submit_tag "Search", class: "btn btn-defualt btn-md" %>
+  <% end %>
+
+  <div id="results" class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <tbody>
+        <% if @results != nil %>
+          <% @results['events']['event'].each do |item| %>
+            <tr>
+              <td><b><%= item['city_name'] %></b></td>
+              <td><%= item['title'] %></td>
+              <td> <%= item['venue_name']%><br><%= item['venue_address']%></td>
+              <td><%= item['start_time'] if item['start_time']%></td>
+              <td><%= event_image_small item %></td>
+              </tr>
+          <% end %>
+        <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+

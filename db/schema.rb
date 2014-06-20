@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140619043509) do
+ActiveRecord::Schema.define(version: 20140619164053) do
 
   create_table "comments", force: true do |t|
     t.text     "text"
@@ -23,13 +23,10 @@ ActiveRecord::Schema.define(version: 20140619043509) do
   add_index "comments", ["plan_id"], name: "index_comments_on_plan_id"
 
   create_table "plans", force: true do |t|
-    t.text     "text"
-    t.integer  "user_id"
+    t.text     "contant"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "plans", ["user_id"], name: "index_plans_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
