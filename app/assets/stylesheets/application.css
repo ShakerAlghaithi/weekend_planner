@@ -21,3 +21,9 @@
 
   background-color: #C3ECFB;
  }
+ #comment-form {
+            display: none;
+            background: #e5e5e5;
+            padding: 10px;
+            width: 25%;
+        }

@@ -16,14 +16,39 @@
         <td><%= plan.contant %></td>
         <td><%= link_to 'Show', plan %></td>
         <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+        <td>
+          <a id="comment-menu" href="#">Comment</a>
+          <div id="comment-form">
+              <form role="comment" method="get" id="commentform" action="">
+                  <input type="text" value="" name="s" id="s" />
+                  <input type="submit" id="commentsubmit" value="Comment" />
+              </form>
+          </div>
+        </td>
         <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
       <% end %>
     </tbody>
   </table>
 </div>
 <%= will_paginate @plans %>
 </div>
+ <script type="text/javascript">
+    var commentvisible = 0;
+    $("#comment-menu").click(function(e){
+        //This stops the page scrolling to the top on a # link.
+        e.preventDefault();
+        if (commentvisible ===0) {
+            //Search is currently hidden. Slide down and show it.
+            $("#comment-form").slideDown(200);
+            $("#s").focus(); //Set focus on the search input field.
+            commentvisible = 1; //Set search visible flag to visible.
+        } else {
+            //Search is currently showing. Slide it back up and hide it.
+            $("#comment-form").slideUp(200);
+            commentvisible = 0;
+        }
+    });
+    </script>
 
 <div class="row">
 <h1> search for the events </h1>
