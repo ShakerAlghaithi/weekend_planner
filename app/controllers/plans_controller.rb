@@ -4,8 +4,8 @@ class PlansController < ApplicationController
 
  require 'eventful/api'
 
-  def index
-    @plans = Plan.all
+def index
+  @plans = Plan.all.paginate(:page => params[:page], :per_page => 5)
     if params[:location] != nil
     location = params[:location] #get the search input from the user
     keyword = params[:keyword]
@@ -16,7 +16,6 @@ class PlansController < ApplicationController
                            :page_size => 5
 
     end
-
   end
 
   def show
