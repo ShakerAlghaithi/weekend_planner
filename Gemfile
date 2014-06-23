@@ -29,6 +29,7 @@ gem 'bootstrap-generators', '~> 3.1.1'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
 gem 'rspec-rails', '~> 3.0.0'
+gem 'factory_girl_rails', '>= 4.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
