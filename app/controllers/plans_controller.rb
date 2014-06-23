@@ -2,29 +2,21 @@ class PlansController < ApplicationController
   before_action :authenticate_user!
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
-  # GET /plans
-  # GET /plans.json
+
   def index
     @plans = Plan.all.paginate(:page => params[:page], :per_page => 5)
-
   end
 
-  # GET /plans/1
-  # GET /plans/1.json
   def show
   end
 
-  # GET /plans/new
   def new
     @plan = Plan.new
   end
 
-  # GET /plans/1/edit
   def edit
   end
 
-  # POST /plans
-  # POST /plans.json
   def create
     @plan = Plan.new(plan_params)
 
@@ -39,8 +31,6 @@ class PlansController < ApplicationController
     end
   end
 
-  # PATCH/PUT /plans/1
-  # PATCH/PUT /plans/1.json
   def update
     respond_to do |format|
       if @plan.update(plan_params)
@@ -53,8 +43,6 @@ class PlansController < ApplicationController
     end
   end
 
-  # DELETE /plans/1
-  # DELETE /plans/1.json
   def destroy
     @plan.destroy
     respond_to do |format|
