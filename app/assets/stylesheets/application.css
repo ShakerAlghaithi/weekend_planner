@@ -19,11 +19,23 @@
  }
  #planList{
 
-  background-color: #C3ECFB;
+      background-color: #C3ECFB;
  }
  #comment-form {
-            display: none;
-            background: #e5e5e5;
-            padding: 10px;
-            width: 25%;
+      display: none;
+
+      padding: 10px;
+      width: 25%;
         }
+#user_email {
+  width: 390;
+  height: 49;
+}
+#user_password {
+  width: 390;
+  height: 49;
+}
+#user_password_confirmation {
+  width: 390;
+  height: 49;
+}

@@ -9,6 +9,7 @@ $(document).ready(function(){
       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk');
+
   //comments dropdown menu:
 
     // var commentvisible = 0;
@@ -16,18 +17,22 @@ $(document).ready(function(){
     //     //This stops the page scrolling to the top on a # link.
     //     e.preventDefault();
     //     if (commentvisible ===0) {
-    //         //Search is currently hidden. Slide down and show it.
+    //         //comment is currently hidden. Slide down and show it.
     //         $("#comment-form").slideDown(200);
     //         $("#s").focus(); //Set focus on the search input field.
     //         commentvisible = 1; //Set search visible flag to visible.
     //     } else {
-    //         //Search is currently showing. Slide it back up and hide it.
+    //         //comment is currently showing. Slide it back up and hide it.
     //         $("#comment-form").slideUp(200);
     //         commentvisible = 0;
     //     }
     // });
 
-
+      $('#commentsubmit').on('click', function(e){
+        e.preventDefault();
+        var comm = $('#c').val();
+        console.log(comm)
+      });
 
 
 
