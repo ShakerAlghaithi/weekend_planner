@@ -4,7 +4,7 @@ class PlansController < ApplicationController
 
 
   def index
-    @plans = Plan.all.paginate(:page => params[:page], :per_page => 5)
+    @plans = Plan.all.includes(:comments).paginate(:page => params[:page], :per_page => 5)
   end
 
   def show
