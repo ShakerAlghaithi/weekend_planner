@@ -14,15 +14,14 @@
  *= require_self
  */
  body {
-
   background-size: cover;
-  background-image: url('http://www.zingerbug.com/Backgrounds/background_images/aqua_random_spiral_swirls_background_1800x1600.jpg');
+  background-image: url('http://www.girardatlarge.com/wp-content/uploads/2013/11/Weekend.jpg');
  }
  #navbar {
-
   font-size: 15px;
   font-family: 'Lobster';
   background-color: #A9E9E1;
+
  }
  #displayText {
   display: block;
@@ -30,8 +29,36 @@
  }
  #planList{
 
-  background-color: #78AEB7;
+  background-color: none;
  }
  #event {
-  background-color: #78AEB7;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: none;
  }
+ h3 {
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+
+ }
+ #comment-form {
+      display: none;
+      padding: 10px;
+      width: 25%;
+        }
+#user_email {
+  width: 390;
+  height: 49;
+}
+#user_password {
+  width: 390;
+  height: 49;
+}
+#user_password_confirmation {
+  width: 390;
+  height: 49;
+}
+.navbar-brand {
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+
+}
+

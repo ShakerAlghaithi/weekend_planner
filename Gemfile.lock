@@ -46,6 +46,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
@@ -55,6 +56,11 @@ GEM
     eventfulapi (2.2.1)
       mime-types (> 0.0.0)
     execjs (2.2.0)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.1.1)
@@ -100,6 +106,22 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rspec-core (3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-expectations (3.0.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.0.0)
+    rspec-mocks (3.0.1)
+      rspec-support (~> 3.0.0)
+    rspec-rails (3.0.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
+    rspec-support (3.0.0)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -127,8 +149,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.2)
-      coffee-rails
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.5.1)
@@ -147,14 +167,15 @@ DEPENDENCIES
   devise
   dotenv-rails
   eventfulapi
+  factory_girl_rails (>= 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   pry-rails
   rails (= 4.1.1)
+  rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
   sqlite3
-  turbolinks
   uglifier (>= 1.3.0)
   will_paginate (~> 3.0)

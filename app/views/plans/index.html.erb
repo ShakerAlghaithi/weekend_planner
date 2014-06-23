@@ -9,22 +9,57 @@
   <h4>Listing plans</h4>
   <div class="addthis_native_toolbox"></div>
 </div>
+
 <div id="plansTable" class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <tbody>
-      <%= content_tag_for(:tr, @plans) do |plan| %>
-            <td><%= plan.contant %></td>
-            <td><%= link_to 'Show', plan %></td>
+      <% @plans.each do |plan| %>
+        <tr data-plan_id="<%= plan.id %>">
+        <td><%= plan.contant %></td>
+        <td><%= link_to 'Show', plan %></td>
         <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+        <td>
+        <!-- the comment link -->
+        <a id="comment-menu" data-toggle="modal" data-target="#commentMenu<%= plan.id %>" href="#">Comment</a>
+       <!-- the model -->
+       <div class="modal fade" id="commentMenu<%= plan.id %>" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Comment</h4>
+            </div>
+            <div class="comment-body">
+              <ul id="modal_comments_list_<%= plan.id %>">
+                  <% plan.comments.each do |comment| %>
+                     <li><%= comment.text %></li>
+                  <% end %>
+              </ul>
+            </div>
+            <div class="modal-footer">
+            <div class="form">
+              <form class="pull-left" >
+               <input type="hidden" name="plan_id" value="<%= plan.id %>"/>
+               <label>Comment: <input name="comment" type="text" placeholder="add a comment"/></label>
+                <button  id="add_<%= plan.id %>" type="button" class="add_comment btn btn-default btn-sm">Add</button>
+              </form>
+            </div>
+              <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </td>
         <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><a class="addthis_button_facebook_like" fb:like:send="true"></a></td>
+        </tr>
       <% end %>
+      <a class="addthis_button_facebook_like" fb:like:send="true"></a>
     </tbody>
   </table>
 </div>
 <%= will_paginate @plans %>
 </div>
 <hr size="10" noshade>
+
 <div id="event" class="row">
   <h4> Search For Events </h4>
   <%= form_tag plans_path, :method => 'get' do %>
@@ -50,6 +85,11 @@
     </tbody>
   </table>
   </div>
+</div>
+<div>
+<!-- change the url to heroku url for planner app -->
+  <div class="fb-send" data-href="https://google.com" data-colorscheme="light"></div>
+  <%= will_paginate @plans %>
 </div>
 
 

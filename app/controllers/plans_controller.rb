@@ -1,21 +1,20 @@
 class PlansController < ApplicationController
+  require 'eventful/api'
   before_action :authenticate_user!
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
- require 'eventful/api'
 
-def index
-  @plans = Plan.all.paginate(:page => params[:page], :per_page => 5)
-    if params[:location] != nil
-    location = params[:location] #get the search input from the user
-    keyword = params[:keyword]
-    eventful = Eventful::API.new ENV['EVENTFUL_KEY'] #send the request to the API
-    @results = eventful.call 'events/search',        #store the response
-                           :keywords => keyword,
-                           :location => location,
-                           :page_size => 5
+  def index # I include the comments that belog to the each plan
+      @plans = Plan.all.includes(:comments).paginate(:page => params[:page], :per_page => 5)
+        if params[:location] != nil
+        location = params[:location] #get the search input from the user
+        keyword = params[:keyword]
+        eventful = Eventful::API.new ENV['EVENTFUL_KEY'] #send the request to the API
+        @results = eventful.call 'events/search',        #store the response
+                               :keywords => keyword,
+                               :location => location,
+                               :page_size => 5
 
-    end
   end
 
   def show
@@ -41,7 +40,6 @@ def index
       end
     end
   end
-
 
   def update
     respond_to do |format|
