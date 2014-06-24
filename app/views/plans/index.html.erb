@@ -6,8 +6,9 @@
       New Plan
     <% end %>
     <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-  <h4>Listing plans</h4>
-  <div class="addthis_native_toolbox"></div>
+    <h4>Listing plans</h4>
+   <div class="addthis_native_toolbox"></div>
+
 </div>
 
 <div id="plansTable" class="table-responsive">
@@ -61,16 +62,16 @@
   <li><%= will_paginate @plans %></li>
   </ul>
 </div>
-<hr size="10" noshade>
-
+<hr class="style-seven" size="10" noshade>
 <div id="event" class="row">
+  <div class="searchfrom">
   <h4> Search For Events </h4>
   <%= form_tag plans_path, :method => 'get' do %>
     <%= text_field_tag :location, params[:location], placeholder: "Enter the location here .." %>
     <%= text_field_tag :keyword, params[:keyword], placeholder: "Enter the something here .." %>
     <%= submit_tag "Search", class: "btn btn-danger btn-md" %>
   <% end %>
-
+  </div>
   <div id="results" class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <tbody>

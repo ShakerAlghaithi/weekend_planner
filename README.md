@@ -1,5 +1,8 @@
 WeekendsPlanner is a webapp that will be utilized by users to search for  an event and add the weekly plan and then send it to his/her friends and relatives on Facebook or through e-mail and several other ways available to him/her in this application. All in one.
 
+Link to live application:
+http://weekends-planner.herokuapp.com/users/sign_in
+
 Technologies used in the production of this app include:
   1) ruby 2.1.1p76
   2) Rails 4.1.1
@@ -55,5 +58,4 @@ Things you may want to cover:
   Download from Github
   Create your own Environment key (rake secret) and add to the env file
   Push to Heroku
-The app link to heroku:
-http://weekends-planner.herokuapp.com/users/sign_in
+

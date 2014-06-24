@@ -15,41 +15,53 @@
  */
  body {
 
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url('http://www.girardatlarge.com/wp-content/uploads/2013/11/Weekend.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('http://www.girardatlarge.com/wp-content/uploads/2013/11/Weekend.jpg');
  }
 
  #navbar {
-  font-size: 15px;
-  font-family: 'Lobster';
-  background-color: #CC3D00;
+    font-size: 15px;
+    font-family: 'Lobster';
+    background-color: #CC3D00;
 
  }
  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-text{
-  color: black;
+   color: black;
  }
  .navbar-inverse .navbar-text a{
-  color: black;
+   color: black;
  }
 
  #displayText {
-  display: block;
-  margin-left: 7px;
+    display: block;
+    margin-left: 7px;
  }
  #planList{
-  margin-left: 30px;
-  margin-right: 30px;
-  background-color: #F0F7D7;
+  margin-top: 20px;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #FBCD9F;
+ }
+ .page-header{
+    margin-right: 5px;
+    margin-left: 5px;
+ }
+ #plan-table{
+    margin-right: 5px;
+    margin-left: 5px;
  }
  #event {
-  margin-left: 30px;
-  margin-right: 30px;
-  background-color: #F0F7D7;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #FBCD9F;
  }
- h3 {
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+
+ h4 {
+   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 
  }
 
@@ -73,7 +85,26 @@
 #location, #keyword {
   height: 33px;
 }
-.comment-body, .modal-header, .modal-footer {
-  background-color: #F7A784;
+.modal-header, .modal-footer {
+  background-color: #FBCD9F;
 }
+/* Flaired edges, by Tomas Theunissen */
+
+hr.style-seven {
+  width: 90%;
+  border-top: 3px solid black;
+}
+.searchfrom {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#result {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.editUser {
+  margin-left: 40px;
+
+}
+
 
