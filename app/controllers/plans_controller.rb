@@ -4,16 +4,16 @@ class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
 
-  def index # I include the comments that belog to the each plan
-      @plans = Plan.all.includes(:comments).paginate(:page => params[:page], :per_page => 5)
-        if params[:location] != nil
-        location = params[:location] #get the search input from the user
-        keyword = params[:keyword]
-        eventful = Eventful::API.new ENV['EVENTFUL_KEY'] #send the request to the API
-        @results = eventful.call 'events/search',        #store the response
-                               :keywords => keyword,
-                               :location => location,
-                               :page_size => 5
+  def index # I include the comments that belog to each plan
+    @plans = Plan.all.includes(:comments).paginate(:page => params[:page], :per_page => 5)
+      if params[:location] != nil
+      location = params[:location] #get the search input from the user location and the search term
+      keyword = params[:keyword]
+      eventful = Eventful::API.new ENV['EVENTFUL_KEY'] #send the request to the API
+      @results = eventful.call 'events/search',        #store the response
+                             :keywords => keyword,
+                             :location => location,
+                             :page_size => 5 #display only five result each page
     end
   end
 
@@ -29,7 +29,6 @@ class PlansController < ApplicationController
 
   def create
     @plan = Plan.new(plan_params)
-
     respond_to do |format|
       if @plan.save
         format.html { redirect_to @plan, notice: 'Plan was successfully created.' }
@@ -61,14 +60,14 @@ class PlansController < ApplicationController
     end
   end
 
-    private
-      # Use callbacks to prevent reapetation.
-      def set_plan
-        @plan = Plan.find(params[:id])
-      end
+  private
+    # Use callbacks to prevent reapetation.
+    def set_plan
+      @plan = Plan.find(params[:id])
+    end
 
-      # Only allow the parameters that we want.
-      def plan_params
-        params.require(:plan).permit(:contant)
-      end
+    # Only allow the parameters that we want.
+    def plan_params
+      params.require(:plan).permit(:contant)
+    end
 end
