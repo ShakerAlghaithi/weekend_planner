@@ -1,7 +1,7 @@
 
 <div id ="planList" class="row">
   <div class="page-header">
-    <%= link_to new_plan_path, :class => 'btn btn-default btn-md' do %>
+    <%= link_to new_plan_path, :class => 'btn btn-danger btn-md' do %>
       <span class="glyphicon glyphicon-plus"></span>
       New Plan
     <% end %>
@@ -40,10 +40,10 @@
               <form class="pull-left" >
                <input type="hidden" name="plan_id" value="<%= plan.id %>"/>
                <label>Comment: <input name="comment" type="text" placeholder="add a comment"/></label>
-                <button  id="add_<%= plan.id %>" type="button" class="add_comment btn btn-default btn-sm">Add</button>
+                <button  id="add_<%= plan.id %>" type="button" class="add_comment btn btn-success btn-sm">Add</button>
               </form>
             </div>
-              <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@
   <%= form_tag plans_path, :method => 'get' do %>
     <%= text_field_tag :location, params[:location], placeholder: "Enter the location here .." %>
     <%= text_field_tag :keyword, params[:keyword], placeholder: "Enter the something here .." %>
-    <%= submit_tag "Search", class: "btn btn-defualt btn-md" %>
+    <%= submit_tag "Search", class: "btn btn-danger btn-md" %>
   <% end %>
 
   <div id="results" class="table-responsive">

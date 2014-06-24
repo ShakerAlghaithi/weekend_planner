@@ -20,12 +20,20 @@
   background-size: cover;
   background-image: url('http://www.girardatlarge.com/wp-content/uploads/2013/11/Weekend.jpg');
  }
+
  #navbar {
   font-size: 15px;
   font-family: 'Lobster';
-  background-color: #B20021;
+  background-color: #CC3D00;
 
  }
+ .navbar-inverse .navbar-brand, .navbar-inverse .navbar-text{
+  color: black;
+ }
+ .navbar-inverse .navbar-text a{
+  color: black;
+ }
+
  #displayText {
   display: block;
   margin-left: 7px;
@@ -44,25 +52,28 @@
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 
  }
- #comment-form {
-      display: none;
-      padding: 10px;
-      width: 25%;
-        }
+
 #user_email {
-  width: 390;
-  height: 49;
+  width: 390px;
+  height: 40px;
 }
 #user_password {
-  width: 390;
-  height: 49;
+  width: 390px;
+  height: 40px;
 }
 #user_password_confirmation {
-  width: 390;
-  height: 49;
+  width: 390px;
+  height: 40px;
 }
 .navbar-brand {
+  font-size: 25px;
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
 
+}
+#location, #keyword {
+  height: 33px;
+}
+.comment-body, .modal-header, .modal-footer {
+  background-color: #F7A784;
 }
 
