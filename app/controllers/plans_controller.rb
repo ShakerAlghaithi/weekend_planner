@@ -14,7 +14,7 @@ class PlansController < ApplicationController
                                :keywords => keyword,
                                :location => location,
                                :page_size => 5
-
+    end
   end
 
   def show
@@ -61,14 +61,14 @@ class PlansController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to prevent reapetation.
-    def set_plan
-      @plan = Plan.find(params[:id])
-    end
+    private
+      # Use callbacks to prevent reapetation.
+      def set_plan
+        @plan = Plan.find(params[:id])
+      end
 
-    # Only allow the parameters that we want.
-    def plan_params
-      params.require(:plan).permit(:contant)
-    end
+      # Only allow the parameters that we want.
+      def plan_params
+        params.require(:plan).permit(:contant)
+      end
 end
