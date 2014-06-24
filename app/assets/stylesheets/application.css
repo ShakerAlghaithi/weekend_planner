@@ -60,7 +60,7 @@
     background-color: #FBCD9F;
  }
 
- h4 {
+ h3 {
    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 
  }
@@ -102,9 +102,8 @@ hr.style-seven {
   margin-right: 5px;
   margin-left: 5px;
 }
-.editUser {
+.editUser, .singup, .singin, .forgotpass {
   margin-left: 40px;
-
 }
 
 
