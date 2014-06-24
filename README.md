@@ -55,3 +55,5 @@ Things you may want to cover:
   Download from Github
   Create your own Environment key (rake secret) and add to the env file
   Push to Heroku
+The app link to heroku:
+http://weekends-planner.herokuapp.com/users/sign_in
