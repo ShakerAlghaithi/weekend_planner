@@ -3,7 +3,7 @@ $(document).ready(function(){
   //this function for facebook send button :
      window.fbAsyncInit = function() {
           FB.init({
-            appId      : 'ENV['FBID']',
+            appId      : 'ENV['FB_ID']',
             xfbml      : true,
             version    : 'v2.0'
           });
@@ -12,7 +12,7 @@ $(document).ready(function(){
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=ENV['FBID']&version=v2.0";
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=ENV['FB_ID']&version=v2.0";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
