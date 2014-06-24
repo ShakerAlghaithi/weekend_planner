@@ -28,16 +28,17 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'devise'
 
+  gem 'will_paginate', '~> 3.0'
+  gem 'bootstrap-generators', '~> 3.1.1'
+  gem 'eventfulapi'
+  gem 'spring'
+
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
 group :development, :test do
   gem 'pry-rails'
   gem 'dotenv-rails'
-  gem 'will_paginate', '~> 3.0'
-  gem 'bootstrap-generators', '~> 3.1.1'
-  gem 'eventfulapi'
-  gem 'spring'
   gem 'factory_girl_rails', '>= 4.1.0'
   gem 'rspec-rails', '~> 3.0.0'
 end
