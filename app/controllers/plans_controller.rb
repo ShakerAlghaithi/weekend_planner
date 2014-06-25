@@ -59,6 +59,9 @@ class PlansController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def about
+     render :about_us
+  end
 
   private
     # Use callbacks to prevent reapetation.

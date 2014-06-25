@@ -1,11 +1,11 @@
-WeekendsPlanner is a webapp that will be utilized by users to search for  an event and add the weekly plan and then send it to his/her friends and relatives on Facebook or through e-mail and several other ways available to him/her in this application. All in one.
+WeekendsPlanner is a webapp that will be utilized by users to search for  an event and add the weekend plan and then send it to his/her friends and relatives on Facebook or through e-mail and several other ways available to him/her in this application. All in one.
 
 Link to live application:
 http://weekends-planner.herokuapp.com/users/sign_in
 
 Technologies used in the production of this app include:
   1) ruby 2.1.1p76
-  2) Rails 4.1.1
+  2)Rails 4.1.1
   3) CSS
   4) Javascript
   5) Jquery
@@ -13,11 +13,11 @@ Technologies used in the production of this app include:
   7) JSON API Parsing
 
 User Stories:
-  User can search for any event or activity.
   User can base his/her search on the area and type of interst.
   User can create, read, update, destroy a plan.
-  User can see a details of a plan without leaving the main page.
   User can login and logout.
+  User can search for any event or activity.
+  User can see a details of a plan without leaving the main page.
 
 This README would normally document whatever steps are necessary to get the application up and running.
 
