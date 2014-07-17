@@ -3,7 +3,7 @@ $(document).ready(function(){
   //this function for facebook send button :
      window.fbAsyncInit = function() {
           FB.init({
-            appId      : '267503073433757',
+            appId      : ENV['FACEBOOKID'],
             xfbml      : true,
             version    : 'v2.0'
           });

@@ -1,0 +1,77 @@
+<% @plans.each do |plan| %>
+   <% if plan.user_id == current_user.id %>
+    <tr data-plan_id="<%= plan.id %>">
+    <td><%= plan.contant %></td>
+    <td><%= link_to 'Show', plan %></td>
+    <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
+    <td>
+    <!-- the comment link -->
+  <a id="comment-menu" data-toggle="modal" data-target="#commentMenu<%= plan.id %>" href="#">Comment</a>
+   <!-- the model -->
+   <div class="modal fade" id="commentMenu<%= plan.id %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Comment</h4>
+        </div>
+        <div class="comment-body">
+          <ul id="modal_comments_list_<%= plan.id %>">
+              <% plan.comments.each do |comment| %>
+                 <li><%= comment.text %></li>
+              <% end %>
+          </ul>
+        </div>
+        <div class="modal-footer">
+        <div class="form">
+          <form class="pull-left" >
+           <input type="hidden" name="plan_id" value="<%= plan.id %>"/>
+           <label>Comment: <input name="comment" type="text" placeholder="add a comment"/></label>
+            <button  id="add_<%= plan.id %>" type="button" class="add_comment btn btn-success btn-sm">Add</button>
+          </form>
+        </div>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </td>
+    <td><%= link_to 'Destroy', plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% else %>
+        <tr>
+           <td><%= plan.contant %></td>
+           <td><%= link_to 'Show', plan %></td>
+           <td>
+            <a id="comment-menu" data-toggle="modal" data-target="#commentMenu<%= plan.id %>" href="#">Comment</a>
+            <div class="modal fade" id="commentMenu<%= plan.id %>" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Comment</h4>
+        </div>
+        <div class="comment-body">
+          <ul id="modal_comments_list_<%= plan.id %>">
+              <% plan.comments.each do |comment| %>
+                 <li><%= comment.text %></li>
+              <% end %>
+          </ul>
+        </div>
+        <div class="modal-footer">
+        <div class="form">
+          <form class="pull-left" >
+           <input type="hidden" name="plan_id" value="<%= plan.id %>"/>
+           <label>Comment: <input name="comment" type="text" placeholder="add a comment"/></label>
+            <button  id="add_<%= plan.id %>" type="button" class="add_comment btn btn-success btn-sm">Add</button>
+          </form>
+        </div>
+          <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+       </td>
+    </tr>
+   <% end %>
+  <% end %>
+  <!-- this url well be send with the facebook message -->
+ <div class="fb-send" data-href="http://weekends-planner.herokuapp.com/users/sign_in" data-colorscheme="light"></div>

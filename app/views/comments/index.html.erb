@@ -1,1 +1,26 @@
-<h4>comment</h4>
+<div class="modal fade" id="commentMenu<%= plan.id %>" tabindex="-1" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 class="modal-title">Comment</h4>
+  </div>
+  <div class="comment-body">
+    <ul id="modal_comments_list_<%= plan.id %>">
+        <% plan.comments.each do |comment| %>
+           <li><%= comment.text %></li>
+        <% end %>
+    </ul>
+  </div>
+  <div class="modal-footer">
+  <div class="form">
+    <form class="pull-left" >
+     <input type="hidden" name="plan_id" value="<%= plan.id %>"/>
+     <label>Comment: <input name="comment" type="text" placeholder="add a comment"/></label>
+      <button  id="add_<%= plan.id %>" type="button" class="add_comment btn btn-success btn-sm">Add</button>
+    </form>
+  </div>
+    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>

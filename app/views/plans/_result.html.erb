@@ -1,0 +1,11 @@
+ <% if @results != nil %>
+  <% @results['events']['event'].each do |item| %>
+    <tr>
+      <td><b><%= item['city_name'] %></b></td>
+      <td><%= item['title'] %></td>
+      <td> <%= item['venue_name']%><br><%= item['venue_address']%></td>
+      <td><%= item['start_time'] if item['start_time']%></td>
+      <td><%= event_image_small item %></td>
+      </tr>
+  <% end %>
+<% end %>

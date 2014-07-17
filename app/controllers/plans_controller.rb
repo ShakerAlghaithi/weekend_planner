@@ -1,7 +1,8 @@
 class PlansController < ApplicationController
   require 'eventful/api'
   before_action :authenticate_user!
-  before_action :set_plan, only: [:show, :edit, :update, :destroy]
+  before_action :set_plan, only: [:show]
+  before_action :authorize, only: [:destroy, :update]
 
 
   def index # I include the comments that belog to each plan
@@ -28,7 +29,9 @@ class PlansController < ApplicationController
   end
 
   def create
+
     @plan = Plan.new(plan_params)
+    @plan.user_id = current_user.id
     respond_to do |format|
       if @plan.save
         format.html { redirect_to @plan, notice: 'Plan was successfully created.' }
@@ -59,6 +62,16 @@ class PlansController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def authorize
+    if @plan.user_id == current_user.id
+      flash[:notice] = "You successfully done it"
+    else
+      flash[:notice] = "You Don't have a permission to do this"
+      redirect_to plans_path
+    end
+  end
+
   def about
      render :about_us
   end
@@ -71,6 +84,6 @@ class PlansController < ApplicationController
 
     # Only allow the parameters that we want.
     def plan_params
-      params.require(:plan).permit(:contant)
+      params.require(:plan).permit(:contant, :user_id)
     end
 end
